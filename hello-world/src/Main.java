@@ -8,11 +8,12 @@ import  java.util.Locale;
 public class Main {
     public  static  void main(String[] args){
         Dogs dog1 = new Dogs();
+        Dogs dog2 = new Dogs("Nik", "Brown", 120, 20.4, "nada");
 
-        dog1.name = "Nik";
-        dog1.color = "Brown";
-        dog1.height = 80;
-        dog1.peso = 20.4;
+        System.out.println(dog2.getName());
+        System.out.println(dog2.getColor());
+
+        System.out.println(dog2.interagir("carinho"));
 
     }
 
