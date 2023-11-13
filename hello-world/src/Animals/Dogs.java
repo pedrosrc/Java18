@@ -1,25 +1,24 @@
 package Animals;
 
-public class Dogs {
+public class Dogs extends Animais {
     //ATRIBUTOS
-    private String name;
-    private String color;
-    private int height;
-    private double peso;
-    private String spiritState;
+    static  int numberDogs;
 
     //CONSTRUTORES
-    public Dogs(){}
-    public Dogs(String name, String color, int height, double peso, String spiritState){
-        this.name = name;
-        this.color = color;
-        this.height= height;
-        this.peso = peso;
-        this.spiritState = spiritState;
+
+    public Dogs(String name, String color, String spiritState) {
+        super(name, color, spiritState);
     }
 
 
     //METODOS
+
+    public static int getNumberDogs() {
+        return numberDogs;
+    }
+    public static void setNumberDogs(int numberDogs) {
+        Dogs.numberDogs = numberDogs;
+    }
     public String getName(){return this.name;}
     public void setName(String name) {this.name = name;}
     public String getColor() {return color;}
@@ -34,12 +33,12 @@ public class Dogs {
 
     public String interagir(String action) {
 
-    switch(action){
-        case "carinho": this.spiritState= "Happy"; break;
-        case "nada": this.spiritState= "Sad"; break;
-        case "vai dormir": this.spiritState="Angry"; break;
-        default: this.spiritState = "Neutro"; break;
-    }
+        switch(action){
+            case "carinho": this.spiritState= "Happy"; break;
+            case "nada": this.spiritState= "Sad"; break;
+            case "vai dormir": this.spiritState="Angry"; break;
+            default: this.spiritState = "Neutro"; break;
+        }
 
 
 //        if(action.equals("carinho")){
@@ -50,4 +49,15 @@ public class Dogs {
         return this.spiritState;
     }
 
+    @Override
+    public String toString() {
+        return "Dogs{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
+    @Override
+    public void soar() {
+        System.out.println("Au AU");
+    }
 }
